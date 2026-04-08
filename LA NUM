@@ -1,0 +1,70 @@
+import random as r
+
+num_baby = r.randint(1, 3)
+num_eazy = r.randint(1, 10)
+num_medium = r.randint(1, 20)
+num_hard = r.randint(1, 10000000000000000000000000000000000000000000000000000000000000000000000000000000000)
+key1 = False
+key2 = False
+key3 = False
+key4 = False
+def g1():
+    print("easy mode. guess an number between 1-3")
+    guess = int(input("what is your guess?"))
+    if guess == num_baby:
+        print("you win! you get a key!")
+        global key1
+        key1 = True
+    else:
+        print("you lose! try again!")
+        g1()
+def g2():
+    print("medium mode. guess an number between 1-10")
+    guess = int(input("what is your guess?"))
+    if guess == num_eazy:
+        print("you win! you get a key!")
+        global key2
+        key2 = True
+    else:
+        print("you lose! try again!")
+        g2()
+def g3():
+    print("medium mode. guess an number between 1-20")
+    guess = int(input("what is your guess?"))
+    if guess == num_medium:
+        print("you win! you get a key!")
+        global key3
+        key3 = True
+    else:
+        print("you lose! try again!")
+        g3()
+def g4():
+    print("hard mode. guess an number between 10000000000000000000000000000000000000000000000000000000000000000000000000000000000")
+    print(f"hint: {num_hard} ")
+    guess = int(input("what is your guess?"))
+    if guess == num_hard:
+        print("you win! you get a key!")
+        global key4
+        key4 = True
+    else:
+        print("you lose! try again!")
+        g4()
+print("let play an game...")
+input("")
+print("there are 4 keys, baby, eazy, medium, and hard. beat those diffcultys to win an prize...")
+while True:
+    your_choice = input("which one do you choose?")
+    if your_choice == "baby":
+        g1()
+    elif your_choice == "eazy":
+        g2()
+    elif your_choice == "medium":
+        g3()
+    elif your_choice == "hard":
+        g4()
+    else:
+        print("invalid choice. please try again.")
+    if key1 and key2 and key3 and key4:
+        print("Here the prize! https://www.youtube.com/watch?v=dQw4w9WgXcQ")
+        break
+
